@@ -15,6 +15,12 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+                
+                <div>{{$user->profile->titles}}</div>
+                <div>{{$user->profile->description}}</div>
+                <div>{{$user->profile->url}}</div>    
+                
+                
                 </div>
             </div>
         </div>
