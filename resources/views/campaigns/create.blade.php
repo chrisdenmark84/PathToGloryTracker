@@ -58,11 +58,11 @@
 
                     <input id="sub_faction" 
                     type="text" 
-                    class="form-control @error('sub_faction') is-invalid @enderror" name="subfaction" 
-                    value="{{ old('subfaction') }}" 
-                    required autocomplete="subfaction" autofocus>
+                    class="form-control @error('sub_faction') is-invalid @enderror" name="sub_faction" 
+                    value="{{ old('sub_faction') }}" 
+                    required autocomplete="sub_faction" autofocus>
 
-                @error('subfaction')
+                @error('sub_faction')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>

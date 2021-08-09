@@ -14,6 +14,7 @@ class CampaignsController extends Controller
 
     public function store()
     {
+
         $data = request()->validate([
                 'army_name' => 'required',
                 'faction' => 'required',
@@ -23,7 +24,7 @@ class CampaignsController extends Controller
                 'image' => 'image',
             ]);
 
-        auth()->user()->Campaign()->create($data);
+        auth()->user()->campaigns()->create($data);
         
 
         dd(request()->all());
