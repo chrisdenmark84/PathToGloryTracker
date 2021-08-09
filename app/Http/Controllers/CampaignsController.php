@@ -11,4 +11,21 @@ class CampaignsController extends Controller
     {
         return view('campaigns/create');
     }
+
+    public function store()
+    {
+        $data = request()->validate([
+                'army_name' => 'required',
+                'faction' => 'required',
+                'sub_faction' => '',
+                'realm' => '',
+                'starting_size' => 'required',
+                'image' => 'image',
+            ]);
+
+        auth()->user()->Campaign()->create($data);
+        
+
+        dd(request()->all());
+    }
 }
