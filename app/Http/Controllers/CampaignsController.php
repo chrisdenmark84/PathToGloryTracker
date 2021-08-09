@@ -18,10 +18,10 @@ class CampaignsController extends Controller
         $data = request()->validate([
                 'army_name' => 'required',
                 'faction' => 'required',
-                'sub_faction' => '',
-                'realm' => '',
+                'sub_faction' => 'required',
+                'realm' => 'required',
                 'starting_size' => 'required',
-                'image' => 'image',
+                'image' => ['image', 'required'],
             ]);
 
         auth()->user()->campaigns()->create($data);
