@@ -44,7 +44,7 @@ class User extends Authenticatable
 
     public function campaigns()
     {
-        return $this->hasMany(Campaign::class);
+        return $this->hasMany(Campaign::class)->orderBy('created_at', 'DESC');
     }
 
 
