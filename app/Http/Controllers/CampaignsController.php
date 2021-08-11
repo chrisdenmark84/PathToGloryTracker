@@ -6,7 +6,13 @@ use Illuminate\Http\Request;
 
 class CampaignsController extends Controller
 {
-    //
+    //makes it require login
+    public function __construct()
+    {
+        $this->middleware('auth');   
+    }
+
+
     public function create()
     {
         return view('campaigns/create');
