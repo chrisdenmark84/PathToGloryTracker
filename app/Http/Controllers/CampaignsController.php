@@ -30,9 +30,19 @@ class CampaignsController extends Controller
                 'image' => ['image', 'required'],
             ]);
 
-        auth()->user()->campaigns()->create($data);
+            $imagePath = (request('image')->store('uploads', 'public'));
+
+            auth()->user()->campaigns()->create([
+                'army_name' => $data['army_name'],
+                'faction' => $data['faction'],
+                'sub_faction' =>$data['sub_faction'],
+                'realm' =>$data['realm'],
+                'starting_size' => $data['starting_size'],
+                'image' => $imagePath,
+            ]);
         
 
-        dd(request()->all());
+            return redirect('/profile/' . auth()->user()->id);
+            
     }
 }
