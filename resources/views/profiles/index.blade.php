@@ -5,7 +5,7 @@
     <div class="row justify-content-center pt-3 pb-3">
         <div class="col-md-8">
             <div class="card">
-                <div class="d-flex justify-content-between align-items-baseline">
+                <div class="d-flex justify-content-between align-items-baseline pt-1 pl-2 pr-2">
                     <h2>{{$user->username}}</h2>
                     <a href="../c/create">Start New Campaign </a>
                 </div>
@@ -19,7 +19,8 @@
                 
                     <div>{{$user->profile->titles}}</div>
                     <div>{{$user->profile->description}}</div>
-                    <div>{{$user->profile->url}}</div>    
+                    <div>{{$user->profile->url}}</div>  
+                    <div>Total Campaigns: {{$user->campaigns->count()}}</div>  
 
                 
                 </div>
