@@ -33,6 +33,8 @@
             <h2>Campaigns:</h2>
         @foreach ($user->campaigns as $campaign)
             <div class="card mt-2 mb-2">
+                <div><a href="#">Edit Campaign</a></div>
+                <div><a href="#">Delete Campaign</a></div>
                 <div>Army Name: {{$campaign->army_name}}</div>
                 <div>Faction: {{$campaign->faction}}</div>
                 <div>Sub Faction: {{$campaign->sub_faction}}</div>
