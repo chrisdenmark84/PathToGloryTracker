@@ -19,6 +19,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/c/{campaign}', 'App\Http\Controllers\CampaignsController@show');
 Route::get('/c/create', 'App\Http\Controllers\CampaignsController@create');
 Route::post('/c', 'App\Http\Controllers\CampaignsController@store');
 

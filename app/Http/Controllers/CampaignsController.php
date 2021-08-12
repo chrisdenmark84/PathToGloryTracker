@@ -45,4 +45,9 @@ class CampaignsController extends Controller
             return redirect('/profile/' . auth()->user()->id);
             
     }
+
+    public function show($campaign)
+    {
+        dd($campaign);
+    }
 }
