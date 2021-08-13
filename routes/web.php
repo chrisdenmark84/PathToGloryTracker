@@ -24,3 +24,4 @@ Route::get('/c/create', 'App\Http\Controllers\CampaignsController@create');
 Route::post('/c', 'App\Http\Controllers\CampaignsController@store');
 
 Route::get('/profile/{user}', [App\Http\Controllers\ProfilesController::class, 'index'])->name('profile.show');
+Route::get('/profile/{user}/edit', [App\Http\Controllers\ProfilesController::class, 'edit'])->name('profile.edit');

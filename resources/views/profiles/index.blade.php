@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="d-flex justify-content-between align-items-baseline pt-1 pl-2 pr-2">
                     <h2>{{$user->username}}</h2>
-                    <a href="../c/create">Start New Campaign </a>
+                    <a href="../c/create">Start New Campaign</a>
                 </div>
 
                 <div class="card-body">
@@ -21,7 +21,7 @@
                     <div>{{$user->profile->description}}</div>
                     <div>{{$user->profile->url}}</div>  
                     <div>Total Campaigns: {{$user->campaigns->count()}}</div>  
-                    <div><a href="#">Edit Profile</div>
+                    <div><a href="/profile/{{ $user->id}}/edit">Edit Profile</div>
                 
                 </div>
             </div>
