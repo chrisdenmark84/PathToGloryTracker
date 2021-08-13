@@ -46,8 +46,8 @@ class CampaignsController extends Controller
             
     }
 
-    public function show($campaign)
+    public function show(\App\Models\Campaign $campaign)
     {
-        dd($campaign);
+        return view('campaigns.show', compact('campaign'));
     }
 }
