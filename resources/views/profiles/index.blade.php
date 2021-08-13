@@ -21,7 +21,7 @@
                     <div>{{$user->profile->description}}</div>
                     <div>{{$user->profile->url}}</div>  
                     <div>Total Campaigns: {{$user->campaigns->count()}}</div>  
-
+                    <div><a href="#">Edit Profile</div>
                 
                 </div>
             </div>
