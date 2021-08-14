@@ -17,9 +17,9 @@
 
                     {{ __('You are logged in!') }}
                 
-                    <div>{{$user->profile->titles}}</div>
-                    <div>{{$user->profile->description}}</div>
-                    <div>{{$user->profile->url}}</div>  
+                    <div>{{$user->profile->titles ?? ''}}</div>
+                    <div>{{$user->profile->description ?? ''}}</div>
+                    <div>{{$user->profile->url ?? ''}}</div>  
                     <div>Total Campaigns: {{$user->campaigns->count()}}</div>  
                     <div><a href="/profile/{{ $user->id}}/edit">Edit Profile</div>
                 
