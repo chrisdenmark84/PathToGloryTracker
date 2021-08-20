@@ -28,7 +28,7 @@ class ProfilesController extends Controller
 
         auth()->user()->profile->update($data);
 
-        return redirect("/profile/{$user->id}");
+        return redirect('/profile/' . auth()->user()->id);
 
     }
 
