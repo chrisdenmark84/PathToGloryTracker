@@ -17,15 +17,15 @@
 
 
                 <div class="form-group row">
-                    <label for="title" class="col-md-4 col-form-label">{{ __('Title') }}</label>
+                    <label for="titles" class="col-md-4 col-form-label">{{ __('Title') }}</label>
 
-                    <input id="title" 
+                    <input id="titles" 
                     type="text" 
-                    class="form-control @error('title') is-invalid @enderror" name="title" 
-                    value="{{ old('title') ?? $user->profile->titles }}" 
-                    required autocomplete="title" autofocus>
+                    class="form-control @error('title') is-invalid @enderror" name="titles" 
+                    value="{{ old('titles') ?? $user->profile->titles }}" 
+                    required autocomplete="titles" autofocus>
 
-                @error('title')
+                @error('titles')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
