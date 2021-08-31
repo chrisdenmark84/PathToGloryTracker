@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class CampaignsController extends Controller
 {
     //makes it require login
     public function __construct()
     {
-        $this->middleware('auth');   
+        $this->middleware('auth');
     }
 
 
@@ -22,28 +23,31 @@ class CampaignsController extends Controller
     {
 
         $data = request()->validate([
-                'army_name' => 'required',
-                'faction' => 'required',
-                'sub_faction' => 'required',
-                'realm' => 'required',
-                'starting_size' => 'required',
-                'image' => ['image', 'required'],
-            ]);
+            'army_name' => 'required',
+            'faction' => 'required',
+            'sub_faction' => 'required',
+            'realm' => 'required',
+            'starting_size' => 'required',
+            'image' => ['image', 'required'],
+        ]);
 
-            $imagePath = (request('image')->store('uploads', 'public'));
+        $imagePath = (request('image')->store('uploads', 'public'));
 
-            auth()->user()->campaigns()->create([
-                'army_name' => $data['army_name'],
-                'faction' => $data['faction'],
-                'sub_faction' =>$data['sub_faction'],
-                'realm' =>$data['realm'],
-                'starting_size' => $data['starting_size'],
-                'image' => $imagePath,
-            ]);
-        
+        $image = Image::make(public_path("storage/{$imagePath}"))->fit(1200, 1200);
+        $image->save();
 
-            return redirect('/profile/' . auth()->user()->id);
-            
+
+        auth()->user()->campaigns()->create([
+            'army_name' => $data['army_name'],
+            'faction' => $data['faction'],
+            'sub_faction' => $data['sub_faction'],
+            'realm' => $data['realm'],
+            'starting_size' => $data['starting_size'],
+            'image' => $imagePath,
+        ]);
+
+
+        return redirect('/profile/' . auth()->user()->id);
     }
 
     public function show(\App\Models\Campaign $campaign)
