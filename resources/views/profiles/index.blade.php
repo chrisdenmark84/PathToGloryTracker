@@ -5,9 +5,10 @@
     <div class="row justify-content-center pt-3 pb-3">
         <div class="col-md-8">
             <div class="card">
+                <div><img src="/storage/{{ $user->profile->image }}" class="rounded-circle w-50 pl-2">
+                </div>
                 <div class="d-flex justify-content-between align-items-baseline pt-1 pl-2 pr-2">
-                    
-                    <h2>{{$user->username}}</h2>
+                     <h2>{{$user->username}}</h2>
 
                     @can('update', $user->profile)
                     <a href="../c/create">Start New Campaign</a>
